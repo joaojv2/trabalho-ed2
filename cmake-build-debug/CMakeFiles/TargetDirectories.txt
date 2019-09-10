@@ -1,0 +1,3 @@
+/home/joaovicttors/Faculdade/4⁰ periodo/estrutura-dados/trabalho-impl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/joaovicttors/Faculdade/4⁰ periodo/estrutura-dados/trabalho-impl/cmake-build-debug/CMakeFiles/trabalho_impl.dir
+/home/joaovicttors/Faculdade/4⁰ periodo/estrutura-dados/trabalho-impl/cmake-build-debug/CMakeFiles/edit_cache.dir
