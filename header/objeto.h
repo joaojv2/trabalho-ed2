@@ -12,14 +12,17 @@ typedef struct Objeto {
     int index;
     int congelado;
     Cliente *cliente;
+
 } Objeto;
 
 int objeto_nao_nulo(Objeto **objetos, int size);
+
 int object_descongelado(Objeto **, int);
 
-void descongela_objetos(Objeto **, int);
-void preenche_objetos(FILE *, Objeto **, int);
+void descongelar_objetos(Objeto **, int);
 
-Objeto *menor_objeto(Objeto **, int);
+void preencher_objetos(FILE *, Objeto **, int);
+
+void obter_menor_objeto(Objeto **, Objeto *, int);
 
 #endif //TRABALHO_IMPL_OBJETO_H

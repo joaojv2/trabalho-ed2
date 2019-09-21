@@ -5,10 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "objeto.h"
+#include "../header/objeto.h"
 
 #define ONE 1
-#define ZERO 0
 
 #define TRUE 1
 #define FALSE 0
@@ -57,7 +56,7 @@ int object_descongelado(Objeto **objetos, int size) {
  *  @param objetos
  *  @param size
  */
-void descongela_objetos(Objeto **objetos, int size) {
+void descongelar_objetos(Objeto **objetos, int size) {
 
     for (int i = 0; i < size; i ++) {
         if (objetos[i] != NULL) {
@@ -72,30 +71,27 @@ void descongela_objetos(Objeto **objetos, int size) {
  *  @param cliente
  *  @param size
  */
-Objeto *menor_objeto(Objeto **objetos, int size) {
+void obter_menor_objeto(Objeto **objetos, Objeto *menor_objeto, int size) {
 
-    Objeto *objeto;
     int menor = 999;
 
     for (int i = 0; i < size; i ++) {
         if (objetos[i] != NULL) {
             if (objetos[i]->congelado == DESCONGELADO && objetos[i]->cliente->codigo < menor) {
-                objeto = objetos[i];
-                menor = objeto->cliente->codigo;
+                *menor_objeto = *objetos[i];
+                menor = menor_objeto->cliente->codigo;
             }
         }
     }
-
-    return objeto;
 }
 
 /**
  *
- *  @param file
+ *  @param arquivo
  *  @param objetos
  *  @param size
  */
-void preenche_objetos(FILE *file, Objeto **objetos, int size) {
+void preencher_objetos(FILE *arquivo, Objeto **objetos, int size) {
 
     for (int i = 0; i < size; i ++) {
 
@@ -105,6 +101,6 @@ void preenche_objetos(FILE *file, Objeto **objetos, int size) {
         objetos[i]->congelado = DESCONGELADO;
 
         objetos[i]->cliente = (Cliente *) malloc(sizeof(Cliente));
-        fread(objetos[i]->cliente, sizeof(Cliente), ONE, file);
+        procurar_client_arquivo(arquivo, objetos[i]->cliente);
     }
 }

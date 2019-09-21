@@ -12,9 +12,10 @@ typedef struct Cliente {
     int codigo;
     char nome[50];
     char data_nascimento[20];
+
 } Cliente;
 
-int find_cliente(FILE *, Cliente *);
-int insert_cliente(FILE *, Cliente *);
+int procurar_client_arquivo(FILE *, Cliente *);
+int inserir_cliente_arquivo(FILE *, Cliente *);
 
 #endif //TRABALHO_IMPL_CLIENTE_H

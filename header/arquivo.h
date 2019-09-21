@@ -7,7 +7,10 @@
 
 #include <bits/types/FILE.h>
 
-FILE *cria_arquivo_escrita(char *);
-FILE *abre_arquivo_leitura(char *);
+FILE *criar_arquivo_escrita(char *);
+
+FILE *abrir_arquivo_leitura(char *);
+
+void printar_arquivo(char *);
 
 #endif //TRABALHO_IMPL_ARQUIVO_H
